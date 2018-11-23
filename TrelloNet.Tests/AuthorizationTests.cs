@@ -16,114 +16,114 @@ namespace TrelloNet.Tests
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_Always_ContainsKeyPassedInConstructor()
+		public void GetAuthorizationlUrl_Always_TrueKeyPassedInConstructor()
 		{
 			var trello = new Trello("123");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadOnly);
 
-			Assert.That(url.ToString(), Is.StringContaining("key=123"));
+			Assert.True(url.ToString().Contains("key=123"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_Always_ContainsApplicationName()
+		public void GetAuthorizationlUrl_Always_TrueApplicationName()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("appname", Scope.ReadOnly);
 
-			Assert.That(url.ToString(), Is.StringContaining("name=appname"));
+			Assert.True(url.ToString().Contains("name=appname"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_Always_ContainsResponseTypeToken()
+		public void GetAuthorizationlUrl_Always_TrueResponseTypeToken()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadOnly);
 
-			Assert.That(url.ToString(), Is.StringContaining("response_type=token"));
+			Assert.True(url.ToString().Contains("response_type=token"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ScopeReadonly_ContainsRead()
+		public void GetAuthorizationlUrl_ScopeReadonly_TrueRead()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadOnly);
 
-			Assert.That(url.ToString(), Is.StringContaining("scope=read"));
-			Assert.That(url.ToString(), Is.Not.StringContaining("write"));
+			Assert.True(url.ToString().Contains("scope=read"));
+			Assert.False(url.ToString().Contains("write"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ScopeReadWrite_ContainsReadWrite()
+		public void GetAuthorizationlUrl_ScopeReadWrite_TrueReadWrite()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWrite);
 
-			Assert.That(url.ToString(), Is.StringContaining("scope=read,write"));
+			Assert.True(url.ToString().Contains("scope=read,write"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ScopeReadOnlyAccount_ContainsReadOnlyAccount()
+		public void GetAuthorizationlUrl_ScopeReadOnlyAccount_TrueReadOnlyAccount()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadOnlyAccount);
 
-			Assert.That(url.ToString(), Is.StringContaining("scope=read,account"));
+			Assert.True(url.ToString().Contains("scope=read,account"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ScopeReadWriteAccount_ContainsReadWriteAccount()
+		public void GetAuthorizationlUrl_ScopeReadWriteAccount_TrueReadWriteAccount()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWriteAccount);
 
-			Assert.That(url.ToString(), Is.StringContaining("scope=read,write,account"));
+			Assert.True(url.ToString().Contains("scope=read,write,account"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_DefaultExpiration_Contains30days()
+		public void GetAuthorizationlUrl_DefaultExpiration_True30days()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWrite);
 
-			Assert.That(url.ToString(), Is.StringContaining("expiration=30days"));
+			Assert.True(url.ToString().Contains("expiration=30days"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ExpirationNever_ContainsNever()
+		public void GetAuthorizationlUrl_ExpirationNever_TrueNever()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWrite, Expiration.Never);
 
-			Assert.That(url.ToString(), Is.StringContaining("expiration=never"));
+			Assert.True(url.ToString().Contains("expiration=never"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ExpirationOneHour_Contains1hour()
+		public void GetAuthorizationlUrl_ExpirationOneHour_True1hour()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWrite, Expiration.OneHour);
 
-			Assert.That(url.ToString(), Is.StringContaining("expiration=1hour"));
+			Assert.True(url.ToString().Contains("expiration=1hour"));
 		}
 
 		[Test]
-		public void GetAuthorizationlUrl_ExpirationOneHour_Contains1day()
+		public void GetAuthorizationlUrl_ExpirationOneHour_True1day()
 		{
 			var trello = new Trello("dummy");
 
 			var url = trello.GetAuthorizationUrl("dummy", Scope.ReadWrite, Expiration.OneDay);
 
-			Assert.That(url.ToString(), Is.StringContaining("expiration=1day"));
+			Assert.True(url.ToString().Contains("expiration=1day"));
 		}
 
 		[Test]

@@ -1,0 +1,32 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workbench ActiveDocument="TrelloNet.Tests/CardTests.cs">
+    <Files>
+      <File FileName="TrelloNet_standard/Internal/MemberTokenAuthenticator.cs" Line="8" Column="34" />
+      <File FileName="TrelloNet_standard/Advanced/Internal/AdvancedRequest.cs" Line="14" Column="2" />
+      <File FileName="TrelloNet.Tests/UnauthorizedTests.cs" Line="16" Column="70" />
+      <File FileName="TrelloNet.Tests/TrelloTestBase.cs" Line="21" Column="1" />
+      <File FileName="TrelloNet.Tests/AuthorizationTests.cs" Line="56" Column="41" />
+      <File FileName="TrelloNet.Tests/CardTests.cs" Line="395" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TrelloNet" expanded="True">
+            <Node name="TrelloNet.Tests" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="CardTests.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

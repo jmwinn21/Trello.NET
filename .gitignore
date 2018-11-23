@@ -28,3 +28,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 *.nupkg
 packages/
+
+app.config.json

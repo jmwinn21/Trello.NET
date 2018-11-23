@@ -38,7 +38,7 @@ namespace TrelloNet.Tests
 		}
 
 		[Test]
-		public void WithId_TheOnlyLabeledCard_ContainsTwoLabels()
+		public void WithId_TheOnlyLabeledCard_TrueTwoLabels()
 		{
 			var expectedLabels = new List<Card.Label>
 			{
@@ -392,7 +392,7 @@ namespace TrelloNet.Tests
             var actualAttachments = cardAfterAttachment.Attachments.Count;
 
             Assert.That(actualAttachments, Is.EqualTo(expectedAttachments));
-		    Assert.IsNotNullOrEmpty(cardAfterAttachment.Attachments.Last().Url);
+		    Assert.IsNotNull(cardAfterAttachment.Attachments.Last().Url);
             //Not testig mimeType because it always seems to come back null
 
 		    expectedAttachments = card.Attachments.Count;
